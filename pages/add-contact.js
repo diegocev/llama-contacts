@@ -9,11 +9,11 @@ export default function AddContacts () {
     const { register, handleSubmit, formState: { errors } } = useForm();
 
     const processData = (data) => {
-        const URL_API_POST = "https://3a7axh99m1.execute-api.us-east-2.amazonaws.com/production/contacts";
+        const URL_API = "https://3a7axh99m1.execute-api.us-east-2.amazonaws.com/production/contacts";
         console.debug(data);
         setLoading(true);
 
-        axios.post(URL_API_POST, data)
+        axios.post(URL_API, data)
         .then((response) => {
             console.debug(response);
             setLoading(false);
